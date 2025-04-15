@@ -71,4 +71,23 @@ progettoAttuale → Nome del progetto su cui lavora il team (può essere null se
 budget → Importo numerico del budget assegnato al team (sempre presente).
 membri → Una tuple in cui il primo elemento è sempre un Project Manager, seguito da uno o più Developers (almeno un developer obbligatorio).*/
 
+type Developer = Dipendente & {
+  livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
+  linguaggi?: string[],
+  certificazioni: string[]
+}
+
+type Projectmanager = Dipendente & {
+  teamSize: number | null,
+  budgetGestito?: number,
+  stakeholderPrincipali: string[]
+}
+
+type Team = {
+  nome: string,
+  progettoAttuale: string | null,
+  budget: number,
+  membri: [Projectmanager, ...Developer[]]
+}
+
 
