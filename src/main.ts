@@ -87,7 +87,7 @@ type Team = {
   nome: string,
   progettoAttuale: string | null,
   budget: number,
-  membri: [Projectmanager, ...Developer[]]
+  membri: [Projectmanager, Developer, ...Developer[]]
 }
 
 
